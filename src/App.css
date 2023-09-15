@@ -1,0 +1,51 @@
+.App {
+  text-align: center;
+}
+.icon {
+  height: 40px;
+  width: 40px;
+  margin-right: 10px;
+}
+.chatText {
+  margin: 2px;
+  text-align: left;
+  font-family: cursive;
+}
+.infoText {
+  margin: 2px;
+  margin-top: 7px;
+  text-align: right;
+  font-size: smaller;
+  color: cadetblue;
+}
+.chatTextWrap {
+  border-radius: 3px;
+  border: 2px solid black;
+  width: 70vw;
+}
+.chatItem {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+}
+.chatDisplay {
+  height: 90vh;
+  overflow-y: scroll;
+}
+.inputSection {
+  margin-top: 15px;
+}
+.userInput {
+  width: 80vw;
+  border: 3px solid gray;
+  border-radius: 4px;
+  min-height: 20px;
+}
+.userButton {
+  border: 3px solid blue;
+  color: blue;
+  width: 10vm;
+  margin-left: 5px;
+  background-color: white;
+  cursor: pointer;
+}
