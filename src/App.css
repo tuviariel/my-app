@@ -7,12 +7,12 @@
   margin-right: 10px;
 }
 .chatText {
-  margin: 2px;
+  margin: 4px;
   text-align: left;
   font-family: cursive;
 }
 .infoText {
-  margin: 2px;
+  margin: 4px;
   margin-top: 7px;
   text-align: right;
   font-size: smaller;
@@ -51,4 +51,6 @@
 }
 .loader {
   height: 50px;
+  display: flex;
+  margin-right: auto;
 }
