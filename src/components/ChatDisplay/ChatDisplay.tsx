@@ -15,9 +15,9 @@ type ChatProps = {
 
 export const ChatDisplay = (props: ChatProps) => {
     return (
-        <div className="chatDisplay">
+        <div className="chatDisplay" data-testid="chatDisplay">
             {props.chatArr.map((chatItem,i)=>{
-                return (<div key={i} className="chatItem" ref={i === props.chatArr.length-1 ? props.lastItem : null}>
+                return (<div key={i} className="chatItem" ref={i === props.chatArr.length-1 ? props.lastItem : null} data-testid={i === props.chatArr.length-1 ? "chatLast" : null}>
                     <img src={chatItem.sender === "user" ? userLogo : chatLogo} className="icon" alt={chatItem.sender === "user" ? "User logo" : "Chat logo"} />
                     <TextElement chatItem={chatItem} />
                 </div>)

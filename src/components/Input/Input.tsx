@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction } from "react";
-// type InputSetter<T> = (arg: T) => void;
+type OnKeyDown = () => void;
 
 type InputProps = {
 	className: string;
@@ -13,6 +13,8 @@ type InputProps = {
 	id: string;
 	name: string;
 	autoComplete: string;
+	onKeyDown: OnKeyDown;
+	dataTestId: string;
 }
 
 export const Input = (props: InputProps) => {
@@ -28,6 +30,8 @@ export const Input = (props: InputProps) => {
 		id,
 		name,
 		autoComplete,
+		onKeyDown,
+		dataTestId,
 	} = props;
 	return (
 		<>
@@ -42,6 +46,8 @@ export const Input = (props: InputProps) => {
 				id={id}
 				name={name}
 				autoComplete={autoComplete}
+				onKeyDown={(e) => {value && e.key === "Enter" && onKeyDown()}}
+				data-testid={dataTestId}
 			/>
 		</>
 	);

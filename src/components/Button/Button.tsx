@@ -6,6 +6,7 @@ type ButtonProps = {
 	type: string;
 	onClick: OnClick;
 	disabled: boolean;
+	dataTestId: string;
 }
 
 export const Button = (props : ButtonProps) => {
@@ -14,6 +15,7 @@ export const Button = (props : ButtonProps) => {
 		children,
 		onClick,
 		disabled,
+		dataTestId,
 	} = props;
 	
 	if (disabled) {
@@ -21,6 +23,7 @@ export const Button = (props : ButtonProps) => {
 			<button
 				disabled
 				className={className}
+				data-testid={dataTestId}
 			>
 				{children}
 			</button>
@@ -30,6 +33,7 @@ export const Button = (props : ButtonProps) => {
 			<button
 				onClick={onClick}
 				className={className}
+				data-testid={dataTestId}
 			>
 				{children}
 			</button>

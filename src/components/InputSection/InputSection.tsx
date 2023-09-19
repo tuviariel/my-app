@@ -6,18 +6,20 @@ type InputSectionProps = {
     send:() => void;
     inputText:string;
     setInputText: Dispatch<SetStateAction<string>>;
+    disableClick: boolean;
 }
 
 export const InputSection = (props: InputSectionProps) => {
     const {
         send,
         inputText,
-        setInputText
+        setInputText,
+        disableClick
     } = props;
     return (
         <div className="inputSection">
-            <Input className="userInput" setValue={setInputText} value={inputText} placeholder={"Type your question here..."} labelClassName={""} type={""} label={""} required={false} id={""} name={""} autoComplete={""}/>
-            <Button className="userButton" onClick={send} children="Send" type="text" disabled={inputText === "" ? true : false}/>
+            <Input className="userInput" setValue={setInputText} value={inputText} placeholder={"Type your question here..."} labelClassName={""} type={""} label={""} required={false} id={""} name={""} autoComplete={""} onKeyDown={send} dataTestId="input"/>
+            <Button className="userButton" onClick={send} children="Send" type="text" disabled={inputText === "" || disableClick ? true : false} dataTestId="button"/>
         </div>
     )
 }
