@@ -49,3 +49,6 @@
   background-color: white;
   cursor: pointer;
 }
+.loader {
+  height: 50px;
+}
