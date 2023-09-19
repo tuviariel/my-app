@@ -1,9 +1,9 @@
 import loader from "./loader.gif";
 
 export const TextElement = (props: any) => {
-    //currently only the elemType === "P" will work.
+    //currently only the elemType === "P" and "I" will work.
     //The idea of passing an elemType is for a future option to enable to send or except
-    //different types of elements like H-header, I-image, L-list, T-table.      
+    //different types of elements like P-paragraph, H-header, I-image, L-list, T-table.      
 
     const {
         text,
@@ -25,12 +25,14 @@ export const TextElement = (props: any) => {
                 </p>
             )}
             {elemType === "I" && (
-                <img
-                    loading="lazy"
-                    className={text === "Loading..." ? "loader" : ""}
-                    src={text === "Loading..." ? loader : text}
-                    alt="Image"
-                />
+                <div className={text === "Loading..." ? "loader" : "imageText"}>
+                    <img
+                        loading="lazy"
+                        className=""
+                        src={text === "Loading..." ? loader : text}
+                        alt="Image"
+                    />
+                </div>
             )}
             {elemType === "L" && (
                 <ul className="">
@@ -55,7 +57,7 @@ export const TextElement = (props: any) => {
                 </table>
             )}
             <div className="infoText">
-                {sender + ",  " + (text === "Loading..." ? "" : ts)}
+                {sender + (text === "Loading..." ? "" : ",  " + ts)}
             </div>
         </div>
     );

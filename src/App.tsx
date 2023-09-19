@@ -55,5 +55,3 @@ function App() {
 }
 
 export default App;
-
-//add a few neat tests regarding input vs button
