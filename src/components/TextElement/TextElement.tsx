@@ -1,3 +1,4 @@
+import loader from "./loader.gif";
 
 export const TextElement = (props: any) => {
     //currently only the elemType === "P" will work.
@@ -26,8 +27,8 @@ export const TextElement = (props: any) => {
             {elemType === "I" && (
                 <img
                     loading="lazy"
-                    className=""
-                    src={text}
+                    className={text === "Loading..." ? "loader" : ""}
+                    src={text === "Loading..." ? loader : text}
                     alt="Image"
                 />
             )}
